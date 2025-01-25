@@ -10,6 +10,7 @@ gradle-plugin-lombok-version = "8.12"
 gradle-plugin-spotless-version = "7.0.2"
 gradle-plugin-version-catalog-update-version = "0.8.5"
 gradle-plugin-versions-version = "0.52.0"
+jsch-version = "0.1.55"
 junit-jupiter-params-version = "5.11.4"
 junit-jupiter-version = "5.11.4"
 lombok-version = "1.18.36"
@@ -26,6 +27,7 @@ commons-text = { module = "org.apache.commons:commons-text", version.ref = "comm
 equalsverifier = { module = "nl.jqno.equalsverifier:equalsverifier", version.ref = "equalsverifier-version" }
 file-worker = { module = "io.github.astrapi69:file-worker", version.ref = "file-worker-version" }
 gradle-migration-data = { module = "io.github.astrapi69:gradle-migration-data", version.ref = "gradle-migration-data-version" }
+jsch = { module = "com.jcraft:jsch", version.ref = "jsch-version" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter-version" }
 junit-jupiter-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junit-jupiter-params-version" }
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher" }
@@ -47,6 +49,10 @@ annotation-processor = [
 compile-only = [
     "lombok",
 ]
+# The core dependencies
+core-dependencies = [
+    "throwable",
+]
 # Annotation processor dependencies used specifically for test classes
 test-annotation-processor = [
     "lombok",
@@ -66,6 +72,7 @@ unit-testing = [
     "equalsverifier",
     "file-worker",
     "gradle-migration-data",
+    "jsch",
     "junit-jupiter",
     "junit-jupiter-params",
     "meanbean",
