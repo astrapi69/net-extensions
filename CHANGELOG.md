@@ -4,6 +4,26 @@
 Version 6.1-SNAPSHOT
 -------------
 
+## [Unreleased]
+
+### Refactoring
+- Moved `SshConnector` to `net.ssh` package
+- Moved `ProxyPropertyKey` to `net.properties` package
+- Moved `IPResolver` and `IPResolverTest` to `net.ip` package
+- Moved `ShellExecutorTest` to `net.shell` package
+- Moved `SocketExtensionsTest` to `net.socket` package
+- Updated `module-info.java` to export new packages
+
+### Enhancements
+- Added `DnsLookupExtensions` in `net.dns` package for DNS lookup utilities
+- Added `IpInfoExtensions` in `net.ip` package with utility methods for IP information retrieval
+
+### Improvements
+- Improved `URLExtensionsTest` by replacing `new URL(...)` with `new URI(...).toURL()`
+
+### Removals
+- Deleted `lombok.config`
+- Removed obsolete `package.html` file
 
 Version 6.0
 -------------

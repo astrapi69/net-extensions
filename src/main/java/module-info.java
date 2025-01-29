@@ -24,8 +24,10 @@ module io.github.astrapisixtynine.net.extensions
 	requires io.github.astrapisixtynine.throwable;
 	requires java.logging;
 
-	exports io.github.astrapi69.net;
 	exports io.github.astrapi69.net.chat;
+	exports io.github.astrapi69.net.dns;
+	exports io.github.astrapi69.net.ip;
+	exports io.github.astrapi69.net.properties;
 	exports io.github.astrapi69.net.proxy;
 	exports io.github.astrapi69.net.socket;
 	exports io.github.astrapi69.net.url;

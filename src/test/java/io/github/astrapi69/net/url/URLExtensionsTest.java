@@ -28,6 +28,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 import org.junit.jupiter.api.Test;
@@ -47,18 +49,18 @@ public class URLExtensionsTest
 	 * @see java.net.URL#URL(java.net.URL, java.lang.String)
 	 */
 	@Test
-	public void testIsJar() throws MalformedURLException
+	public void testIsJar() throws MalformedURLException, URISyntaxException
 	{
-		final URL myURL = new URL("http://example.com/");
+		URL myURL = new URI("http://example.com/").toURL();
 		assertFalse(URLExtensions.isJar(myURL));
-		final URL jarUrl = new URL("jar:file:/home/root/jdk/rt.jar!/test.xml");
+		final URL jarUrl = new URI("jar:file:/home/root/jdk/rt.jar!/test.xml").toURL();
 		assertTrue(URLExtensions.isJar(jarUrl));
 	}
 
 	@Test
-	public void testInternetConnection() throws MalformedURLException
+	public void testInternetConnection() throws MalformedURLException, URISyntaxException
 	{
-		URL url = new URL("https://www.google.com");
+		URL url = new URI("https://www.google.com").toURL();
 		boolean netIsReachable = URLExtensions.isReachable(url);
 		assertTrue(netIsReachable);
 	}

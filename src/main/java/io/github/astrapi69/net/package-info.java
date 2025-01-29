@@ -1,4 +1,4 @@
 /**
- * This package provides helper classes for the network
+ * This is the base package
  */
 package io.github.astrapi69.net;

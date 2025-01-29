@@ -1,4 +1,4 @@
-package io.github.astrapi69.net;
+package io.github.astrapi69.net.shell;
 
 import java.io.BufferedReader;
 import java.io.File;

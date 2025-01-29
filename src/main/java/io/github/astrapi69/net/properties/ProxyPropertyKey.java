@@ -22,30 +22,56 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.net;
+package io.github.astrapi69.net.properties;
 
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-
-import io.github.astrapi69.net.socket.SocketExtensions;
+import lombok.Getter;
 
 /**
- * The unit test class for the class {@link SocketExtensions}.
+ * The enum {@link ProxyPropertyKey} holds system property keys for proxies.
+ * 
+ * @see <a href="http://docs.oracle.com/javase/6/docs/technotes/guides/net/properties.html">Oracle
+ *      net properties</a>
  */
-public class SocketExtensionsTest
+public enum ProxyPropertyKey
 {
 
+	/** The key for the ftp non proxy hosts. */
+	FTP_NON_PROXY_HOSTS("ftp.nonProxyHosts"),
+
+	/** The key for the ftp proxy host. */
+	FTP_PROXY_HOST("ftp.proxyHost"),
+
+	/** The key for the ftp proxy port. */
+	FTP_PROXY_PORT("ftp.proxyPort"),
+
+	/** The key for the http non proxy hosts. */
+	HTTP_NON_PROXY_HOSTS("http.nonProxyHosts"),
+
+	/** The http proxy host. */
+	HTTP_PROXY_HOST("http.proxyHost"),
+
+	/** The key for the http proxy port. */
+	HTTP_PROXY_PORT("http.proxyPort"),
+
+	/** The key for the socks proxy host. */
+	SOCKS_PROXY_HOST("socksProxyHost"),
+
+	/** The key for the socks proxy port. */
+	SOCKS_PROXY_PORT("socksProxyPort");
+
+	/** The value. */
+	@Getter
+	private String value;
+
 	/**
-	 * Test method for {@link SocketExtensions#available(int)}
+	 * Instantiates a new {@link ProxyPropertyKey} object.
+	 *
+	 * @param value
+	 *            the value
 	 */
-	@Test
-	@Disabled
-	public void testAvailableInt()
+	ProxyPropertyKey(String value)
 	{
-		boolean port25Available = SocketExtensions.available(25);
-		System.out.println(port25Available);
-		port25Available = SocketExtensions.available(1024);
-		System.out.println(port25Available);
+		this.value = value;
 	}
 
 }
