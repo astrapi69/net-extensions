@@ -18,6 +18,14 @@ Version 6.1-SNAPSHOT
 - Moved `ShellExecutorTest` to `net.shell` package
 - Moved `SocketExtensionsTest` to `net.socket` package
 - Updated `module-info.java` to export new packages
+- Marked utility classes as `final` to prevent subclassing:
+    - `URLExtensions`
+    - `IPResolver`
+    - `SocketExtensions`
+    - `DnsLookupExtensions`
+    - `IpInfoExtensions`
+- Added private constructors to enforce non-instantiability
+- Cleaned up an unnecessary blank line in `IpInfoExtensionsTest`
 
 ### Enhancements
 - Added `DnsLookupExtensions` in `net.dns` package for DNS lookup utilities

@@ -39,6 +39,10 @@ import java.util.Enumeration;
 public final class IpInfoExtensions
 {
 
+	private IpInfoExtensions()
+	{
+	}
+
 	/**
 	 * Gets the local network IP address of this machine by establishing a connection to a public
 	 * DNS server

@@ -39,8 +39,12 @@ import io.github.astrapi69.net.socket.SocketExtensions;
  * @version 1.0
  * @author Asterios Raptis
  */
-public class IPResolver
+public final class IPResolver
 {
+
+	private IPResolver()
+	{
+	}
 
 	/**
 	 * Gets all the clients from the given net mask

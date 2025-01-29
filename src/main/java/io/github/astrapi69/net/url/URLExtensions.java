@@ -34,8 +34,12 @@ import java.net.URLDecoder;
 /**
  * The class {@linkplain URLExtensions} provides utility methods for {@link URL}.
  */
-public class URLExtensions
+public final class URLExtensions
 {
+
+	private URLExtensions()
+	{
+	}
 
 	/**
 	 * Gets the filename from the given url object.

@@ -37,8 +37,12 @@ import java.util.stream.Collectors;
  * Utility class for performing DNS lookups, reverse lookups, and running external DNS commands like
  * nslookup and dig
  */
-public class DnsLookupExtensions
+public final class DnsLookupExtensions
 {
+
+	private DnsLookupExtensions()
+	{
+	}
 
 	/**
 	 * Public DNS server of Google

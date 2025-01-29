@@ -45,8 +45,12 @@ import lombok.extern.java.Log;
  * @author Asterios Raptis
  */
 @Log
-public class SocketExtensions
+public final class SocketExtensions
 {
+
+	private SocketExtensions()
+	{
+	}
 
 	/**
 	 * Checks if the given port at localhost is available.
