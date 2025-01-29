@@ -6,6 +6,11 @@ Version 6.1-SNAPSHOT
 
 ## [Unreleased]
 
+### Chores
+- Updated copyright year from **2015** to **2022** across all project files
+- Applied changes to source files, test files, and module-info.java for consistency
+- No functional modifications, purely metadata updates
+
 ### Refactoring
 - Moved `SshConnector` to `net.ssh` package
 - Moved `ProxyPropertyKey` to `net.properties` package

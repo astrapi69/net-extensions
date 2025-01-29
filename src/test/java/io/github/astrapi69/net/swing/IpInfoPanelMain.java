@@ -22,27 +22,47 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.net.shell;
+package io.github.astrapi69.net.swing;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
-public class ShellExecutorTest
+import io.github.astrapi69.net.ip.IpInfo;
+import io.github.astrapi69.net.ip.IpInfoExtensions;
+
+/**
+ * Swing panel to display IP information
+ */
+public class IpInfoPanelMain
 {
 
-	@Test
-	@Disabled("run only locally")
-	public void testExecute() throws IOException, InterruptedException
+	public static void main(String[] args)
 	{
-
-		String shellPath = "/usr/bin/zsh";
-		String executionPath = "~/dev/tmp";
-		String command = "touch foo.txt";
-
-		String shellOutput = ShellExecutor.execute(shellPath, executionPath, command);
-		System.out.println(shellOutput);
-
+		SwingUtilities.invokeLater(() -> {
+			try
+			{
+				IpInfo ipInfo = new IpInfo(IpInfoExtensions.getLocalIPAddress(),
+					IpInfoExtensions.getRouterIPAddress(), IpInfoExtensions.getExternalIPAddress(),
+					IpInfoExtensions.getLocalNetworkIPAddress());
+				IpInfoPanel ipInfoPanel = new IpInfoPanel(ipInfo);
+				JFrame frame = new JFrame("IP Information");
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setSize(400, 200);
+				frame.add(ipInfoPanel);
+				frame.setLocationRelativeTo(null);
+				frame.setVisible(true);
+			}
+			catch (IOException | URISyntaxException e)
+			{
+				e.printStackTrace();
+				JOptionPane.showMessageDialog(null,
+					"Error retrieving IP information: " + e.getMessage(), "Error",
+					JOptionPane.ERROR_MESSAGE);
+			}
+		});
 	}
 }

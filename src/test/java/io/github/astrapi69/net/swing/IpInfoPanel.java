@@ -22,54 +22,44 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.net.proxy;
+package io.github.astrapi69.net.swing;
 
-import java.net.PasswordAuthentication;
+import java.awt.*;
 
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
-import lombok.experimental.FieldDefaults;
+import javax.swing.*;
+
+import io.github.astrapi69.net.ip.IpInfo;
 
 /**
- * The class {@link ProxyAuthenticator}.
+ * Swing panel to display IP information
  */
-@Getter
-@EqualsAndHashCode(callSuper = true)
-@ToString
-@Builder(toBuilder = true)
-@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
-public class ProxyAuthenticator extends java.net.Authenticator
+public class IpInfoPanel extends JPanel
 {
+	private final JLabel localIPLabel;
+	private final JLabel routerIPLabel;
+	private final JLabel externalIPLabel;
+	private final JLabel localNetworkIPLabel;
 
-	/** The password. */
-	String password;
-
-	/** The user. */
-	String user;
-
-	/**
-	 * Instantiates a new proxy authenticator.
-	 *
-	 * @param user
-	 *            the user
-	 * @param password
-	 *            the password
-	 */
-	public ProxyAuthenticator(final String user, final String password)
+	public IpInfoPanel(IpInfo ipInfo)
 	{
-		this.user = user;
-		this.password = password;
+		setLayout(new GridLayout(4, 2, 10, 10));
+		setBorder(BorderFactory.createTitledBorder("IP Information"));
+
+		add(new JLabel("Local IP Address:"));
+		localIPLabel = new JLabel(ipInfo.getLocalIPAddress());
+		add(localIPLabel);
+
+		add(new JLabel("Router IP Address:"));
+		routerIPLabel = new JLabel(ipInfo.getRouterIPAddress());
+		add(routerIPLabel);
+
+		add(new JLabel("External IP Address:"));
+		externalIPLabel = new JLabel(ipInfo.getExternalIPAddress());
+		add(externalIPLabel);
+
+		add(new JLabel("Local Network IP Address:"));
+		localNetworkIPLabel = new JLabel(ipInfo.getLocalNetworkIPAddress());
+		add(localNetworkIPLabel);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	protected PasswordAuthentication getPasswordAuthentication()
-	{
-		return new PasswordAuthentication(user, password.toCharArray());
-	}
 }
