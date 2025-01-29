@@ -48,6 +48,14 @@ public class SimpleSocketServer implements Runnable
 	/** The server port. */
 	private int port;
 
+	/**
+	 * Instantiates a new {@link SimpleSocketServer} object
+	 *
+	 * @param ports
+	 *            the ports
+	 * @throws IOException
+	 *             the io exception
+	 */
 	public SimpleSocketServer(final int ports) throws IOException
 	{
 		port = ports;
@@ -57,11 +65,10 @@ public class SimpleSocketServer implements Runnable
 	/**
 	 * Factory method for creating the new {@link AbstractClientHandler} for handling requests. This
 	 * method is invoked in the run method and can be overridden so users can provide their own
-	 * version of a new new {@link AbstractClientHandler} for custom handling requests.
+	 * version of a new {@link AbstractClientHandler} for custom handling requests.
 	 *
 	 * @param socket
 	 *            the socket
-	 *
 	 * @return the new {@link AbstractClientHandler} for handling requests.
 	 */
 	protected AbstractClientHandler newClientHandler(final Socket socket)
