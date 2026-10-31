@@ -93,10 +93,7 @@ then add the dependency to the dependencies area
 
 ## Maven dependency
 
-Maven dependency is now on sonatype.
-Check
-out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~net-extensions~~~)
-for latest snapshots and releases.
+The library is on Maven Central. Check out [Maven Central](https://central.sonatype.com/artifact/io.github.astrapi69/net-extensions) for the latest release.
 
 Add the following maven dependency to your project `pom.xml` if you want to import the core
 functionality of net-extensions:
@@ -137,8 +134,6 @@ Then you can add the dependency to your dependencies:
 
 ## 📸 Snapshots
 
-[![Snapshot](https://img.shields.io/badge/dynamic/xml?url=https://oss.sonatype.org/service/local/repositories/snapshots/content/io/github/astrapi69/net-extensions/maven-metadata.xml&label=snapshot&color=red&query=.//versioning/latest)](https://oss.sonatype.org/content/repositories/snapshots/io/github/astrapi69/net-extensions/)
-
 This section describes how to import snapshot versions into your project.
 Add the following code snippet to your gradle file in the repositories section:
 
@@ -149,8 +144,8 @@ repositories {
 
 ```groovy
     maven {
-        name "Sonatype Nexus Snapshots"
-        url "https://oss.sonatype.org/content/repositories/snapshots"
+        name "Central Portal Snapshots"
+        url "https://central.sonatype.com/repository/maven-snapshots/"
         mavenContent {
             snapshotsOnly()
         }
@@ -211,9 +206,9 @@ feature requests.
 
 ## Credits
 
-|**Nexus Sonatype repositories**|
+|**Maven Central**|
 |     :---:      |
-|[![sonatype repository](https://img.shields.io/nexus/r/https/oss.sonatype.org/io.github.astrapi69/net-extensions.svg?style=for-the-badge)](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~net-extensions~~~)|
+|[![Maven Central](https://img.shields.io/maven-central/v/io.github.astrapi69/net-extensions?style=for-the-badge)](https://central.sonatype.com/artifact/io.github.astrapi69/net-extensions)|
 |Special thanks to [sonatype repository](https://www.sonatype.com) for providing a free maven repository service for open source projects|
 |     <img width=1000/>     |
 
