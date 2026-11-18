@@ -5,6 +5,7 @@ equalsverifier-version = "3.18.1"
 file-worker-version = "19.0"
 gradle-migration-data-version = "3.0"
 gradle-plugin-grgit-version = "5.3.0"
+gradle-plugin-japicmp-version = "0.4.6"
 gradle-plugin-license-version = "0.16.1"
 gradle-plugin-lombok-version = "8.12"
 gradle-plugin-spotless-version = "7.0.2"
@@ -87,6 +88,7 @@ unit-testing = [
 [plugins]
 gradle-versions-plugin = { id = "com.github.ben-manes.versions", version.ref = "gradle-plugin-versions-version" }
 grgit-gradle = { id = "org.ajoberstar.grgit", version.ref = "gradle-plugin-grgit-version" }
+japicmp-gradle-plugin = { id = "me.champeau.gradle.japicmp", version.ref = "gradle-plugin-japicmp-version" }
 license-gradle-plugin = { id = "com.github.hierynomus.license", version.ref = "gradle-plugin-license-version" }
 lombok-plugin = { id = "io.freefair.lombok", version.ref = "gradle-plugin-lombok-version" }
 spotless-plugin-gradle = { id = "com.diffplug.spotless", version.ref = "gradle-plugin-spotless-version" }
