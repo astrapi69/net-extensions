@@ -174,9 +174,7 @@ Release version numbers will be incremented in the following format:
 
 `<major>.<minor>.<patch>`
 
-`./gradlew build` holds a release to this: its task `japicmp` compares the jar with the last release on Maven Central
-and fails the build when a minor or patch version is not binary compatible with it, while a new major version only
-reports the incompatible changes under `build/reports/japicmp/`.
+`./gradlew build` runs `apiCompatibility`, which compares the public API with the last release on Maven Central and, within the same major version, fails on a binary or source incompatible change unless a documented entry (element, reason, issue) in `gradle/api-compatibility-exclusions.gradle` accepts it; a higher major only reports it.
 
 For detailed information on versioning you can visit
 the [wiki page](https://github.com/lightblueseas/mvn-parent-projects/wiki/Semantic-Versioning).
